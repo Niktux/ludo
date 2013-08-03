@@ -1,0 +1,34 @@
+{% extends 'layouts/admin.twig' %}
+
+{% block content %}
+
+    {% include 'pages/import/parts/searchOptions.twig' %}
+
+<div class="row-fluid">
+	<ul class="ace-thumbnails">
+	    {% for game in games %}
+		<li class="import-search-result">
+			<a href="{{ path('import_bgg', {gameId: game.id}) }}" data-rel="colorbox">
+				<img alt="{{ game.name }}" src="{{ game.box }}" />
+				<div class="text">
+					<div class="inner">{{ game.name }}</div>
+				</div>
+				<div class="tags">
+					{% if game.playingTime is not empty %}
+					    <span class="label label-important">{{ game.playingTime }} min</span>
+					{% endif %}
+					{% if game.players is not empty %}
+					    <span class="label label-success">{{ game.players }}</span>
+				    {% endif %}
+					<span class="label label-warning ">{{ game.year }}</span>
+				    {% for publisher in game.publishers|slice(0,3) %}
+    					<span class="label label-info">{{ publisher }}</span>
+					{% endfor %}
+				</div>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+</div><!--PAGE CONTENT ENDS-->
+
+{% endblock %}

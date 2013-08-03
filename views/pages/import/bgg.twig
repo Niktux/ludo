@@ -1,0 +1,71 @@
+{% extends 'layouts/admin.twig' %}
+
+{% block content %}
+
+<div class="span12">
+    <h3 class="row-fluid header smaller lighter blue">
+        <span class="span7">
+        	<i class="icon-puzzle-piece"></i>
+        	 {{ game.name }}
+        </span><!--/span-->
+	</h3>
+	
+	<div class="span2">
+	    <img src="{{ images.thumbnail }}">
+	</div>
+	<div class="span9">
+	    <blockquote class="pull-right">
+	        <p>{{ game.description|raw }}</p>
+			<small>{{ game.title }}</small>
+		</blockquote>
+	</div>
+	
+	<div class="span11">
+        <div class="tabbable">
+        	<ul class="nav nav-tabs" id="myTab3">
+        		<li class="">
+        			<a data-toggle="tab" href="#home3">
+        				<i class="pink icon-gear bigger-110"></i>
+        				General
+        			</a>
+        		</li>
+        
+        		<li class="">
+        			<a data-toggle="tab" href="#profile3">
+        				<i class="blue icon-user bigger-110"></i>
+        				Designers
+        			</a>
+        		</li>
+        
+        		<li class="active">
+        			<a data-toggle="tab" href="#dropdown13">
+        				<i class="icon-rocket"></i>
+        				Details
+        			</a>
+        		</li>
+        	</ul>
+        
+        	<div class="tab-content">
+        		<div id="home3" class="tab-pane">
+        			<p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+        			<p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+        		</div>
+        
+        		<div id="profile3" class="tab-pane">
+        		    <ul>
+    		        {% for designer in game.designers %}
+    		            <li>{{ designer }}</li>
+    		        {% endfor %}
+    		        </ul>
+        		</div>
+        
+        		<div id="dropdown13" class="tab-pane active">
+        			<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+        			<p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+        		</div>
+        	</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+<form class="import" method="post" action="{{ path('import_search') }}">
+
+    <div class="widget-box">
+    	<div class="widget-header">
+    		<h4>Import options</h4>
+    	</div>
+    
+    	<div class="widget-body">
+    		<div class="widget-main">
+                <div class="control-group">
+                	<label class="control-label" for="name">Game</label>
+                
+                	<div class="controls input-prepend">
+                		<span class="add-on">
+                			<i class="icon-puzzle-piece"></i>
+                		</span>
+                		<input {% if searchedName is defined %}value="{{ searchedName }}" {% endif %}type="text" id="name" name="name" placeholder="Type Boardgame name ...">
+                	</div>
+                	
+                	<hr>
+
+                	<label>
+						<input name="tt" id="id-button-borders" checked="checked" type="checkbox" class="tt ace-switch ace-switch-6">
+						<span class="lbl"></span>
+						<small>Tric Trac</small>
+                	</label>
+						
+                	<label>
+						<input name="bgg" id="id-button-borders" checked="checked" type="checkbox" class="bgg ace-switch ace-switch-6">
+						<span class="lbl"></span>
+						<small>Boardgame Geek</small>
+					</label>
+					
+                	<label>
+						<input name="exact" id="id-button-borders" checked="checked" type="checkbox" class="ace-switch ace-switch-6">
+						<span class="lbl"></span>
+						<small>Exact search</small>
+					</label>
+                </div>
+                
+                <hr>
+                
+                <button type="submit" class="btn btn-info">
+    				<i class="icon-search bigger-125"></i>
+    				Search
+				</button>
+            </div>
+    	</div>
+    	
+    </div>
+
+</form>

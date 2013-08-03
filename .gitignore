@@ -1,0 +1,15 @@
+# Dependencies
+vendor
+
+# Secret files
+# config/db.yml
+
+# Runtime files
+var/cache/*
+var/logs/*
+web/var/*
+
+# Eclipse files
+.buildpath
+.project
+.settings

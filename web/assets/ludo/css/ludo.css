@@ -1,0 +1,11 @@
+form.import input[type=checkbox].tt.ace-switch.ace-switch-6:checked + .lbl::before {
+  background-color: #76A1CC !important;
+}
+form.import input[type=checkbox].bgg.ace-switch.ace-switch-6:checked + .lbl::before {
+  background-color: #FEE188 !important;
+}
+
+li.import-search-result img {
+    height: 200px;
+    width: 200px;
+}    

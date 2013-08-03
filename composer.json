@@ -1,0 +1,10 @@
+{
+    "require":
+    {
+        "niktux/firenote": "*@dev"
+    },
+    "autoload":
+    {
+        "psr-0": {"": "src/"}
+    }
+}
